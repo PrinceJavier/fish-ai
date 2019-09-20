@@ -5,5 +5,8 @@ python setup.py build_ext --inplace
 ## Running model on video
 python flow --model cfg/yolo.cfg --load bin/yolo.weights --demo videofile.mp4 --gpu 1.0 --saveVideo
 
-### If no GPU
+### If no GPU prediction
 python flow --model cfg/yolo.cfg --load bin/yolo.weights --demo videofile.mp4 --saveVideo
+
+## Training
+python flow --model cfg/tiny-yolo-3c.cfg --load bin/yolov2-tiny.weights --train --annotation  training/annotations --dataset training/images --gpu 0.0 --epoch 300 
