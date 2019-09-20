@@ -9,9 +9,9 @@ python flow --model cfg/yolo.cfg --load bin/yolo.weights --demo videofile.mp4 --
 python flow --model cfg/yolo.cfg --load bin/yolo.weights --demo videofile.mp4 --saveVideo
 
 ## Training
-python flow --model cfg/tiny-yolo-voc-3c.cfg --load bin/tiny-yolo-voc.weights --train --annotation  training/annotations --dataset training/images --gpu 0.0 --epoch 300
+python flow --model cfg/tiny-yolo-voc-3c.cfg --load bin/tiny-yolo-voc.weights --train --annotation  training/annotations --dataset training/images --gpu 0.0 --epoch 100
 
-python flow --model cfg/tiny-yolo-3c.cfg --load bin/yolov2-tiny.weights --train --annotation  training/annotations --dataset training/images --gpu 0.0 --epoch 300
+python flow --model cfg/tiny-yolo-3c.cfg --load bin/yolov2-tiny.weights --train --annotation  training/annotations --dataset training/images --gpu 0.0 --epoch 100
 
 ## weights
 https://github.com/leetenki/YOLOtiny_v2_chainer/blob/master/tiny-yolo-voc.weights
