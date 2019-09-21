@@ -24,6 +24,8 @@ img = None
 tl_list = []
 br_list = []
 object_list = []
+bbox_colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)] * 5
+bbox_color_list = []
 
 # file dir
 
@@ -41,10 +43,18 @@ next_image = False
 def line_select_callback(clk, rls):
     global tl_list
     global br_list
+    global image
+    global bbox_color
 
     tl_list.append((int(clk.xdata), int(clk.ydata)))
     br_list.append((int(rls.xdata), int(rls.ydata)))
     object_list.append(obj)
+    bbox_color_list.append(bbox_color)
+
+    if len(tl_list) != 0:
+        for tl, br, bbox_c in zip(tl_list, br_list, bbox_color_list):
+            image = cv2.rectangle(image, tl, br, bbox_c, 5)
+    ax.imshow(image)
 
     print('logged data')
     print(tl_list)
@@ -57,6 +67,7 @@ def line_select_callback(clk, rls):
 
 def toggle_selector(event):
     toggle_selector.RS.set_active(True)
+
 
 
 
@@ -82,6 +93,7 @@ def onkeypress(event):
         plt.close()
         next_image = True
         obj = objects[0]
+        bbox_color_list = []
 
 
     if event.key == 'a':
@@ -92,18 +104,22 @@ def onkeypress(event):
 
 # In[ ]:
 
+global bbox_color
+global image
 
 if __name__ == '__main__':
     for n, image_file in enumerate(os.scandir(image_folder)):
-        for obj in objects:
+        for obj, bbox_color in zip(objects, bbox_colors):
             try:
+                print(img)
+
                 img = image_file
                 fig, ax = plt.subplots(1)
 
                 image = cv2.imread(image_file.path)
-
                 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-                ax.imshow(image)
+
+                # ax.imshow(image)
 
                 toggle_selector.RS = RectangleSelector(
                     ax, line_select_callback,
@@ -118,15 +134,18 @@ if __name__ == '__main__':
                 # key = plt.connect('key_press_event', onkeypress)
                 key = fig.canvas.mpl_connect('key_press_event', onkeypress)
 
+                ax.imshow(image)
+
                 plt.title(obj)
                 plt.show()
-                # plt.close(fig)
 
                 if next_image == True:
+                    plt.close(fig)
                     break
 
             except:
                 continue
+                plt.close(fig)
 
 
 # In[ ]:
