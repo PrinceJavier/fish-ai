@@ -9,33 +9,46 @@
 import os
 import cv2
 
+import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.widgets import RectangleSelector
 
 from fish_ai_generate_xml import write_xml
+import ast
 
 
 # In[ ]:
 
 
 # global constants
+# change these labels
+
+df = pd.read_csv('labels.csv', delimiter='\t')
+
+
+objects = list(df.fish.values)
+bbox_colors = pd.read_csv('labels.csv', delimiter='\t').color.values
+bbox_colors = [ast.literal_eval(i) for i in bbox_colors]
+
 
 img = None
 tl_list = []
 br_list = []
+
 object_list = []
-bbox_colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)] * 5
+objects = objects * 5
+obj = objects[0]
+
+
+bbox_colors = bbox_colors * 5
 bbox_color_list = []
+
+next_image = False
 
 # file dir
 
 image_folder = 'training/images'
 savedir = 'training/annotations'
-
-objects = ['butterflyfish', 'rabbitfish', 'moorfish'] * 5
-obj = objects[0]
-
-next_image = False
 
 # In[ ]:
 
