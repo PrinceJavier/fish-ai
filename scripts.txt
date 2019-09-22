@@ -5,6 +5,9 @@ python setup.py build_ext --inplace
 ## Running model on video
 python flow --model cfg/yolo.cfg --load bin/yolo.weights --demo videofile.mp4 --gpu 1.0 --saveVideo
 
+### using latest trained model
+python flow --model cfg/tiny-yolo-voc-3c.cfg --load -1 --demo test/videos/fish_vid_03_test.mp4 --gpu 0.0 --saveVideo
+
 ### If no GPU prediction
 python flow --model cfg/yolo.cfg --load bin/yolo.weights --demo videofile.mp4 --saveVideo
 
