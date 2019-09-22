@@ -1,0 +1,36 @@
+<annotation>
+  <folder>training/images</folder>
+  <filename>fish_vid_01_0095.jpg</filename>
+  <segmented>0</segmented>
+  <size>
+    <width>1920</width>
+    <height>1080</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>butterflyfish</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <pose>Unspecified</pose>
+    <bndbox>
+      <xmin>1605</xmin>
+      <ymin>212</ymin>
+      <xmax>1873</xmax>
+      <ymax>359</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>rabbitfish</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <pose>Unspecified</pose>
+    <bndbox>
+      <xmin>11</xmin>
+      <ymin>553</ymin>
+      <xmax>355</xmax>
+      <ymax>762</ymax>
+    </bndbox>
+  </object>
+</annotation>

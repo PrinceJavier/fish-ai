@@ -66,7 +66,7 @@ def line_select_callback(clk, rls):
 
     if len(tl_list) != 0:
         for tl, br, bbox_c in zip(tl_list, br_list, bbox_color_list):
-            image = cv2.rectangle(image, tl, br, bbox_c, 5)
+            image = cv2.rectangle(image, tl, br, bbox_c, 2)
     ax.imshow(image)
 
     print('logged data')
