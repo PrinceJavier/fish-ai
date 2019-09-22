@@ -127,7 +127,7 @@ if __name__ == '__main__':
                 print(img)
 
                 img = image_file
-                fig, ax = plt.subplots(1)
+                fig, ax = plt.subplots(figsize=(15, 7))
 
                 image = cv2.imread(image_file.path)
                 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
