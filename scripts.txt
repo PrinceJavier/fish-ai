@@ -14,5 +14,5 @@ python flow --model cfg/tiny-yolo-voc-3c.cfg --load bin/tiny-yolo-voc.weights --
 python flow --model cfg/tiny-yolo-3c.cfg --load bin/yolov2-tiny.weights --train --annotation  training/annotations --dataset training/images --gpu 0.0 --epoch 100
 
 ## weights
-https://github.com/leetenki/YOLOtiny_v2_chainer/blob/master/tiny-yolo-voc.weights
-https://pjreddie.com/darknet/yolo/ 
+wget https://github.com/leetenki/YOLOtiny_v2_chainer/blob/master/tiny-yolo-voc.weights
+wget https://pjreddie.com/darknet/yolo/ 
