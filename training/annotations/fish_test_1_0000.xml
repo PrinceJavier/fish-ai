@@ -1,0 +1,49 @@
+<annotation>
+	<folder>my-project-name</folder>
+	<filename>fish_test_1_0000.jpg</filename>
+	<path>/my-project-name/fish_test_1_0000.jpg</path>
+	<source>
+		<database>Unspecified</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>saddle butterfly fish</name>
+		<pose>Unspecified</pose>
+		<truncated>Unspecified</truncated>
+		<difficult>Unspecified</difficult>
+		<bndbox>
+			<xmin>168</xmin>
+			<ymin>379</ymin>
+			<xmax>409</xmax>
+			<ymax>575</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>saddle butterfly fish</name>
+		<pose>Unspecified</pose>
+		<truncated>Unspecified</truncated>
+		<difficult>Unspecified</difficult>
+		<bndbox>
+			<xmin>524</xmin>
+			<ymin>514</ymin>
+			<xmax>659</xmax>
+			<ymax>695</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>saddle butterfly fish</name>
+		<pose>Unspecified</pose>
+		<truncated>Unspecified</truncated>
+		<difficult>Unspecified</difficult>
+		<bndbox>
+			<xmin>423</xmin>
+			<ymin>183</ymin>
+			<xmax>583</xmax>
+			<ymax>299</ymax>
+		</bndbox>
+	</object>
+</annotation>
